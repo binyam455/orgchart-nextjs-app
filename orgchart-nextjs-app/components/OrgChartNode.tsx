@@ -70,7 +70,9 @@ const OrgChartNode = (props: any) => {
         }
         else {
             for (const [key, value] of props.datamap) {
-                if (key != selNode.id) 
+                if (value.manager_id == 0 ||
+                    (key != selNode.id && 
+                    !value.path.includes(selNode.name))) 
                     managerListArr.push({ key: key, value: value.name});
             
                 if (key == selNode.manager_id)
