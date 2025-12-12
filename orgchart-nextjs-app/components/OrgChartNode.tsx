@@ -22,7 +22,8 @@ const OrgChartNode = (props: any) => {
                                                 description:"",
                                                 manager_id: 0,
                                                 manager_name: "",
-                                                level: 0
+                                                level: 0,
+                                                path: ""
                                             });
     const [isAddModalOpen, setIsAddModalOpen] = useState(false);
     const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
@@ -70,6 +71,8 @@ const OrgChartNode = (props: any) => {
         }
         else {
             for (const [key, value] of props.datamap) {
+console.log("p=" + value.path + ", n=" + selNode.name);
+break;
                 if (value.manager_id == 0 ||
                     (key != selNode.id && 
                     !value.path.includes(selNode.name))) 
@@ -110,7 +113,8 @@ const OrgChartNode = (props: any) => {
                          description: selNode.description,
                          manager_id: selNode.manager_id,
                          manager_name: manager_name,
-                         level: selNode.level
+                         level: selNode.level,
+                         path: selNode.path
                         });  
     }
 
