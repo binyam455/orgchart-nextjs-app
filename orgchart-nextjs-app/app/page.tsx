@@ -9,19 +9,23 @@ class Employee {
   description: string;
   manager_id: number;
   level: number;
+  path: string;
   emps: Employee[];
   
   constructor(id: number, 
               name: string, 
               description: string, 
               manager_id: number, 
-              level: number) 
+              level: number,
+              path: string
+            ) 
   {
     this.id = id;
     this.name = name;
     this.description = description;
     this.manager_id = manager_id;
     this.level = level;
+    this.path = path;
     this.emps = [];
   }
 }
@@ -56,10 +60,10 @@ export default function Home() {
                     tmpres[0].name,
                     tmpres[0].description,
                     tmpres[0].manager_id,
-                    tmpres[0].level
+                    tmpres[0].level,
+                    tmpres[0].path
                   );
 
-      let curr_mngid = tmpres[0].id;
       tmpres.splice(0, 1);
       dataMapObj.set(newemp.id, newemp);
 
@@ -75,7 +79,8 @@ export default function Home() {
                               tmpres[i].name,
                               tmpres[i].description,
                               tmpres[i].manager_id,
-                              tmpres[i].level
+                              tmpres[i].level,
+                              tmpres[i].path
                             );
               mngr.emps.push(newemp2);
               curr_emps.push(newemp2); 
