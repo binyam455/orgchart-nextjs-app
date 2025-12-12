@@ -56,13 +56,6 @@ const RootContent = (props: any) => {
                     <table>
                         <tbody>
                             <tr>
-                                <td> 
-                                    <label className={styles.frmlbl}>Manager</label>
-                                </td>
-                                <td>
-                                </td>
-                            </tr>
-                            <tr>
                                 <td>
                                     <label className={styles.frmlbl}>Name</label>
                                 </td>
