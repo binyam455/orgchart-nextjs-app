@@ -47,9 +47,11 @@ const OrgChartNode = (props: any) => {
         let managerListArr: any[] = [];
         managerListArr.push({ key: "-1", value: "-- Root --"});
         setManagerList(managerListArr);
+        setSelectedOption("-1");
 
         setValue("name", "");
         setValue("description", "");
+        setValue("manager_selid", "-1");
         setIsAddModalOpen(true);
     }
 
