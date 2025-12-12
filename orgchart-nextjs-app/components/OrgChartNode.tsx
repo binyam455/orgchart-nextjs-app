@@ -71,8 +71,6 @@ const OrgChartNode = (props: any) => {
         }
         else {
             for (const [key, value] of props.datamap) {
-console.log("p=" + value.path + ", n=" + selNode.name);
-break;
                 if (value.manager_id == 0 ||
                     (key != selNode.id && 
                     !value.path.includes(selNode.name))) 
